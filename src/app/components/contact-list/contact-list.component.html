@@ -7,8 +7,8 @@
   </h1>
 
   <div class="row">
-    <div class="col-md-6 col-xs-12">
-      <div class="row font-weight-bold mt-1 table-content">
+    <div class="col-md-6 col-xs-12 table-content">
+      <div class="row font-weight-bold mt-1">
         <div class="col-6">
           First name
         </div>
@@ -17,8 +17,8 @@
         </div>
       </div>
 
-      <div *ngFor="let contact of contacts$ | async; trackBy: trackById" (click)="toggleSelectedContact(contact)" [ngClass]="highlighting(contact)">
-        <div class="row table-content">
+      <div *ngFor="let contact of contacts$ | async; trackBy: trackById" [ngClass]="highlighting(contact)">
+        <div class="row" (click)="toggleSelectedContact(contact)">
           <div class="col-6">
             {{ contact.firstName }}
           </div>

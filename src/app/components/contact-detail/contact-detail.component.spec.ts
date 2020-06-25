@@ -28,9 +28,9 @@ describe('ContactDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactDetailComponent ],
+      declarations: [ContactDetailComponent],
       providers: [
-        provideMockStore({  }),
+        provideMockStore({}),
       ]
     })
       .compileComponents();

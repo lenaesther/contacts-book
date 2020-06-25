@@ -27,13 +27,13 @@ describe('ContactListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactListComponent ],
+      declarations: [ContactListComponent],
       providers: [
-        provideMockStore({ initialState }),
-        { provide: Router,      useValue: routerSpy }
+        provideMockStore({initialState}),
+        {provide: Router, useValue: routerSpy}
       ]
     })
-    .compileComponents();
+      .compileComponents();
     mockStore = TestBed.inject(MockStore);
   }));
 
@@ -52,5 +52,29 @@ describe('ContactListComponent', () => {
     addContactButton.dispatchEvent(new Event('click'));
     fixture.detectChanges();
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/contactsbook/add']);
+  });
+
+  it('should toggle selected contact id and update selected contact in store', () => {
+    expect(component.selectedContactId).toBe(undefined);
+
+    component.toggleSelectedContact(initialContact);
+    expect(component.selectedContactId).toBe('1');
+    expect(mockStore.dispatch).toHaveBeenCalledWith(initialContact);
+
+    component.toggleSelectedContact(initialContact);
+    expect(component.selectedContactId).toBe(null);
+    expect(mockStore.dispatch).toHaveBeenCalledWith(null);
+  });
+
+  it('should return style class according to selection', () => {
+    component.toggleSelectedContact(initialContact);
+    expect(component.highlighting(initialContact)).toBe('highlight');
+
+    component.toggleSelectedContact(initialContact);
+    expect(component.highlighting(initialContact)).toBe('');
+  });
+
+  it('should return id', () => {
+    expect(component.trackById(0, initialContact)).toBe('1');
   });
 });

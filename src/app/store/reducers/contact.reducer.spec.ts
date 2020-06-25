@@ -79,7 +79,6 @@ describe('reducer: contactReducer', () => {
       // check whether the new state has a selected contact
       expect(newState.selectedContact).toBeTruthy();
 
-      // check whether the selected contact is no longer null
       expect(newState.selectedContact).not.toBe(null);
 
       // check whether the selected contact is the contact that has been selected

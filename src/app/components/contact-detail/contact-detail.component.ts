@@ -15,7 +15,8 @@ export class ContactDetailComponent implements OnInit {
 
   constructor(
     private store: Store<AppState>
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.contact$ = this.store.pipe(select(selectSelectedContact));

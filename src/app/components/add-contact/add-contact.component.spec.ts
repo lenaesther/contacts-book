@@ -36,14 +36,14 @@ describe('AddContactComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddContactComponent ],
-      imports: [ FormsModule ],
+      declarations: [AddContactComponent],
+      imports: [FormsModule],
       providers: [
-        provideMockStore({ initialState }),
-        { provide: Router,      useValue: routerSpy }
+        provideMockStore({initialState}),
+        {provide: Router, useValue: routerSpy}
       ]
     })
-    .compileComponents();
+      .compileComponents();
     mockStore = TestBed.inject(MockStore);
   }));
 
@@ -64,11 +64,10 @@ describe('AddContactComponent', () => {
     expect(mockStore.dispatch).toHaveBeenCalledWith(AddContactAction(testContact));
   });
 
-  it('should reset newContact adter adding', () => {
-    const initialContact: Contact = component.newContact;
+  it('should reset newContact after adding', () => {
     component.newContact = testContact;
     component.addItem();
-    expect(component.newContact).toEqual(initialContact);
+    expect(component.newContact.id).toEqual('');
   });
 
   it('should call router navigate to contactsbook', () => {

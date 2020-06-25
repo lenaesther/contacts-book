@@ -25,7 +25,8 @@ export class AddContactComponent {
   constructor(
     private store: Store<ContactState>,
     private router: Router
-  ) { }
+  ) {
+  }
 
   addItem(): void {
     this.newContact.id = uuid();

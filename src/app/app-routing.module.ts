@@ -13,12 +13,13 @@ const routes: Routes = [
     path: 'contactsbook/add',
     component: AddContactComponent
   },
-  { path: '', redirectTo: 'contactsbook', pathMatch: 'full' },
-  { path: '**', redirectTo: 'contactsbook' }
+  {path: '', redirectTo: 'contactsbook', pathMatch: 'full'},
+  {path: '**', redirectTo: 'contactsbook'}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
