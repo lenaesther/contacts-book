@@ -5,6 +5,7 @@ import { select, Store } from '@ngrx/store';
 import { AppState } from '../../store/app.state';
 import { SelectContactAction } from '../../store/actions/contact.actions';
 import { selectContactList } from '../../store/selectors/contact.selectors';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-list',
@@ -17,6 +18,7 @@ export class ContactListComponent implements OnInit {
 
   constructor(
     private store: Store<AppState>,
+    private router: Router
   ) {
   }
 
@@ -40,5 +42,9 @@ export class ContactListComponent implements OnInit {
 
   highlighting(contact: Contact): string {
     return contact.id === this.selectedContactId ? 'highlight' : '';
+  }
+
+  openAddContact() {
+    this.router.navigate(['/contactsbook/add']);
   }
 }

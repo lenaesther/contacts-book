@@ -7,12 +7,15 @@ import { StoreModule } from '@ngrx/store';
 import { contactReducer } from './store/reducers/contact.reducer';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { ContactDetailComponent } from './components/contact-detail/contact-detail.component';
+import { AddContactComponent } from './components/add-contact/add-contact.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactListComponent,
-    ContactDetailComponent
+    ContactDetailComponent,
+    AddContactComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +23,7 @@ import { ContactDetailComponent } from './components/contact-detail/contact-deta
     StoreModule.forRoot({
       contactState: contactReducer
     }),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

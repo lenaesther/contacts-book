@@ -1,0 +1,42 @@
+<h1>
+  Add new contact
+  <button (click)="openContactsBook()" name="openContactsBook">ContactsBook</button>
+</h1>
+<form (ngSubmit)="addItem()">
+  <div class="form-group">
+    <label>
+      First name
+      <input type="text" [(ngModel)]="newContact.firstName" placeholder="First name" name="firstName">
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      Last name
+      <input type="text" [(ngModel)]="newContact.lastName" placeholder="Last name" name="lastName">
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      Phone
+      <input type="text" [(ngModel)]="newContact.phone" placeholder="Phone" name="phone">
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      E-Mail
+      <input type="text" [(ngModel)]="newContact.email" placeholder="E-Mail" name="email">
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      Address
+      <input type="text" [(ngModel)]="newContact.address" placeholder="Address" name="address">
+    </label>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

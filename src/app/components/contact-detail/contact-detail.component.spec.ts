@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ContactDetailComponent } from './contact-detail.component';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Contact } from '../../store/models/contact.model';
