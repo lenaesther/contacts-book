@@ -1,0 +1,12 @@
+<div class="wrapper" *ngIf="contact$ | async as contact">
+  <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
+  <p>
+    {{ contact.phone }}
+  </p>
+  <p>
+    {{ contact.email }}
+  </p>
+  <p>
+    {{ contact.address }}
+  </p>
+</div>
