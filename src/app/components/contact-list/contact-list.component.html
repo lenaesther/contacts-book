@@ -1,0 +1,23 @@
+<h1>ContactsBook</h1>
+<table>
+  <thead>
+  <tr>
+    <th>
+      First name
+    </th>
+    <th>
+      Last name
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let contact of contacts$ | async; trackBy: trackById"  (click)="toggleSelectedContact(contact)" [ngClass]="highlighting(contact)">
+    <td>
+      {{ contact.firstName }}
+    </td>
+    <td>
+      {{ contact.lastName }}
+    </td>
+  </tr>
+  </tbody>
+</table>
