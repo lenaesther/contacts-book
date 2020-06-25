@@ -32,6 +32,7 @@ export class ContactListComponent implements OnInit {
 
   toggleSelectedContact(contact: Contact): void {
     if (this.selectedContactId !== contact.id) {
+      console.log('dispatchingÄ!!!');
       this.store.dispatch(SelectContactAction(contact));
       this.selectedContactId = contact.id;
     } else {

@@ -4,6 +4,7 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Router } from '@angular/router';
 import { Contact } from '../../store/models/contact.model';
 import { ContactState } from '../../store/models/contact.state';
+import { SelectContactAction } from '../../store/actions/contact.actions';
 
 describe('ContactListComponent', () => {
   let component: ContactListComponent;
@@ -55,15 +56,16 @@ describe('ContactListComponent', () => {
   });
 
   it('should toggle selected contact id and update selected contact in store', () => {
-    expect(component.selectedContactId).toBe(undefined);
+    spyOn(mockStore, 'dispatch');
 
+    expect(component.selectedContactId).toBe(undefined);
     component.toggleSelectedContact(initialContact);
     expect(component.selectedContactId).toBe('1');
-    expect(mockStore.dispatch).toHaveBeenCalledWith(initialContact);
+    expect(mockStore.dispatch).toHaveBeenCalledWith(SelectContactAction(initialContact));
 
     component.toggleSelectedContact(initialContact);
     expect(component.selectedContactId).toBe(null);
-    expect(mockStore.dispatch).toHaveBeenCalledWith(null);
+    expect(mockStore.dispatch).toHaveBeenCalledWith(SelectContactAction(null));
   });
 
   it('should return style class according to selection', () => {
