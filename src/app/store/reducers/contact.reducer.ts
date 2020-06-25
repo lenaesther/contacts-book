@@ -9,7 +9,7 @@ const initialState: ContactState = {
     {
       id: '1',
       firstName: 'Max',
-      lastName: "Musterperson",
+      lastName: 'Musterperson',
       phone: '+43 1234567',
       email: 'max.musterperson@example.com',
       address: 'Musterstraße 1, 1234 Musterstadt'

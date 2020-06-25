@@ -17,7 +17,8 @@ export class ContactListComponent implements OnInit {
 
   constructor(
     private store: Store<AppState>,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.contacts$ = this.store.pipe(select(selectContactList));
@@ -28,17 +29,16 @@ export class ContactListComponent implements OnInit {
   }
 
   toggleSelectedContact(contact: Contact): void {
-    if(this.selectedContactId !== contact.id) {
+    if (this.selectedContactId !== contact.id) {
       this.store.dispatch(SelectContactAction(contact));
-      this.selectedContactId= contact.id;
-    }
-    else {
+      this.selectedContactId = contact.id;
+    } else {
       this.store.dispatch(SelectContactAction(null));
       this.selectedContactId = null;
     }
   }
 
   highlighting(contact: Contact): string {
-    return contact.id === this.selectedContactId ? 'highlight': '';
+    return contact.id === this.selectedContactId ? 'highlight' : '';
   }
 }
