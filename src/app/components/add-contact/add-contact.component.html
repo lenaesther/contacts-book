@@ -1,42 +1,47 @@
-<h1>
-  Add new contact
-  <button (click)="openContactsBook()" name="openContactsBook">ContactsBook</button>
-</h1>
-<form (ngSubmit)="addItem()">
-  <div class="form-group">
-    <label>
-      First name
-      <input type="text" [(ngModel)]="newContact.firstName" placeholder="First name" name="firstName">
-    </label>
-  </div>
+<div class="wrapper container">
+  <h1 class="row">
+    Add new Contact
+    <button (click)="openContactsBook()" name="openContactsBook" ngbTooltip="Open Contacts Book">
+      <i class="fa fa-address-book"></i>
+    </button>
+  </h1>
 
-  <div class="form-group">
-    <label>
-      Last name
-      <input type="text" [(ngModel)]="newContact.lastName" placeholder="Last name" name="lastName">
-    </label>
-  </div>
+  <form (ngSubmit)="addItem()" class="mt-3">
+    <div class="form-group row">
+      <label for="firstName" class="col-md-2 col-xs-12">
+        First name
+      </label>
+      <input class="ml-md-0" type="text" [(ngModel)]="newContact.firstName" placeholder="First name" id="firstName" name="firstName">
+    </div>
 
-  <div class="form-group">
-    <label>
-      Phone
-      <input type="text" [(ngModel)]="newContact.phone" placeholder="Phone" name="phone">
-    </label>
-  </div>
+    <div class="form-group row">
+      <label for="lastName" class="col-md-2 col-xs-12">
+        Last name
+      </label>
+      <input class="ml-md-0" type="text" [(ngModel)]="newContact.lastName" placeholder="Last name" id="lastName" name="lastName">
+    </div>
 
-  <div class="form-group">
-    <label>
-      E-Mail
-      <input type="text" [(ngModel)]="newContact.email" placeholder="E-Mail" name="email">
-    </label>
-  </div>
+    <div class="form-group row">
+      <label for="phone" class="col-md-2 col-xs-12">
+        Phone
+      </label>
+      <input class="ml-md-0" type="text" [(ngModel)]="newContact.phone" placeholder="Phone" id="phone" name="phone">
+    </div>
 
-  <div class="form-group">
-    <label>
-      Address
-      <input type="text" [(ngModel)]="newContact.address" placeholder="Address" name="address">
-    </label>
-  </div>
+    <div class="form-group row">
+      <label for="email" class="col-md-2 col-xs-12">
+        E-Mail
+      </label>
+      <input class="ml-md-0" type="text" [(ngModel)]="newContact.email" placeholder="E-Mail" id="email" name="email">
+    </div>
 
-  <button type="submit">Submit</button>
-</form>
+    <div class="form-group row">
+      <label for="address" class="col-md-2 col-xs-12">
+        Address
+      </label>
+      <input class="ml-md-0" type="text" [(ngModel)]="newContact.address" placeholder="Address" id="address" name="address">
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>

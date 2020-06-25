@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.content{
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+
+h1 {
+  background: #125092;
+  color: white;
+  padding: 1rem 1rem;
+  margin: 0;
+  font-size: 50px;
+}
+
+button {
+  border: 0;
+  background: #125092;
+  color: white;
+  align-items: end;
+  width: fit-content;
+  height: fit-content;
+  vertical-align: text-bottom;
+
+  &:hover {
+    background: #6095c1;
+  }
+}
+

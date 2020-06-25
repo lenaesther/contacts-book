@@ -1,12 +1,23 @@
-<div class="wrapper" *ngIf="contact$ | async as contact">
-  <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
-  <p>
-    {{ contact.phone }}
-  </p>
-  <p>
-    {{ contact.email }}
-  </p>
-  <p>
-    {{ contact.address }}
-  </p>
+<div class="wrapper container mt-1" *ngIf="contact$ | async as contact">
+  <h2 class="row">{{ contact.firstName }} {{ contact.lastName }}</h2>
+  <div class="row">
+    <p class="d-inline-block">
+      <i class="fa fa-phone align-middle"></i>
+      {{ contact.phone }}
+    </p>
+  </div>
+
+  <div class="row">
+    <p class="d-inline-block">
+      <i class="fa fa-envelope align-middle"></i>
+      {{ contact.email }}
+    </p>
+  </div>
+
+  <div class="row">
+    <p class="d-inline-block">
+      <i class="fa fa-map-marker align-middle"></i>
+      {{ contact.address }}
+    </p>
+  </div>
 </div>
