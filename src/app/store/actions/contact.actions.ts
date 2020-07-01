@@ -3,7 +3,7 @@ import { Contact } from '../models/contact.model';
 
 export enum ContactActionTypes {
   ADD_CONTACT = '[CONTACT] Add Item',
-  SELECT_CONTACT = '[CONTACT Select Item'
+  SELECT_CONTACT = '[CONTACT] Select Item'
 }
 
 export const AddContactAction = createAction(
