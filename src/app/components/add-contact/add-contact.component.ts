@@ -31,7 +31,7 @@ export class AddContactComponent {
   addItem(): void {
     this.newContact.id = uuid();
     this.store.dispatch(AddContactAction(this.newContact));
-    this.newContact = this.resetContact;
+    this.newContact = {...this.resetContact};
   }
 
   openContactsBook() {
